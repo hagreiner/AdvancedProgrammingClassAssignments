@@ -41,22 +41,19 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 {
 	int numInfo = 0;
 	string infoBiteStr{ " " };
-	int infoBiteInt{ 0 };
 
 	ifstream input(filename);
 	if (input.is_open())
 	{
-		while (!input.eof() || numInfo <= numLanguages){
+		while (!input.eof() && numInfo < numLanguages){
 			getline(input, infoBiteStr, ' ');
+			if (infoBiteStr == "") { break; }
 			infoArray[0][numInfo] = std::stoi(infoBiteStr);
 
-			getline(input, infoBiteStr, '\n');
+			getline(input, infoBiteStr);
 			infoArray[1][numInfo] = std::stoi(infoBiteStr);
 
 			numInfo++;
-			if (numInfo == numLanguages) {
-				break;
-			}
 		}
 		input.close();
 	}
@@ -65,11 +62,13 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 }
 
 
-string formatReportLine( int languageRank, int infoArray[][INFO], string names[] )
-{
-	// just a stub
-   // modify to build each output line for each language, and align the output so its organized
-   // hint: to return a string that concatenates strings and ints, use a stringstream
+string formatReportLine( int languageRank, int infoArray[][INFO], string names[] ){
+	string year{ to_string(infoArray[1][languageRank]) };
+	string rank{ to_string(infoArray[0][languageRank]) };
+	string name = names[languageRank];
+
+	name.resize(16);
+	rank.resize(10);
    
-   return " ";
+   return name + rank + year;
 }
