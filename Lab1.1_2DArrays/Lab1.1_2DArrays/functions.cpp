@@ -14,6 +14,8 @@
 #include <iomanip>
 #include "functions.h"
 
+#include <iostream>
+
 using namespace std;
 
 
@@ -37,8 +39,27 @@ int loadLanguages( const string& filename, string names[], int maxLanguages )
 
 bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 {
-	// just a stub
-   // modify to load the 2D array (infoArray) with the data stored in info.txt
+	int numInfo = 0;
+	string infoBiteStr{ " " };
+	int infoBiteInt{ 0 };
+
+	ifstream input(filename);
+	if (input.is_open())
+	{
+		while (!input.eof() || numInfo <= numLanguages){
+			getline(input, infoBiteStr, ' ');
+			infoArray[0][numInfo] = std::stoi(infoBiteStr);
+
+			getline(input, infoBiteStr, '\n');
+			infoArray[1][numInfo] = std::stoi(infoBiteStr);
+
+			numInfo++;
+			if (numInfo == numLanguages) {
+				break;
+			}
+		}
+		input.close();
+	}
    
    return true;
 }
