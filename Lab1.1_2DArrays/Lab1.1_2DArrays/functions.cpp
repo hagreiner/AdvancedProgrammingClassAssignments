@@ -39,19 +39,20 @@ int loadLanguages( const string& filename, string names[], int maxLanguages )
 
 bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 {
-	int numInfo = 0;
-	string infoBiteStr{ " " };
+	int numInfo = 0, rank, year;
+	string infoBiteStr{ " " }, junk;
 
 	ifstream input(filename);
 	if (input.is_open())
 	{
 		while (!input.eof() && numInfo < numLanguages){
-			getline(input, infoBiteStr, ' ');
-			if (infoBiteStr == "") { break; }
-			infoArray[0][numInfo] = std::stoi(infoBiteStr);
-
 			getline(input, infoBiteStr);
-			infoArray[1][numInfo] = std::stoi(infoBiteStr);
+			if (infoBiteStr == "") { break; }
+			
+			stringstream sst(infoBiteStr);
+			sst >> rank >> year;
+			infoArray[0][numInfo] = rank;
+			infoArray[1][numInfo] = year;
 
 			numInfo++;
 		}
