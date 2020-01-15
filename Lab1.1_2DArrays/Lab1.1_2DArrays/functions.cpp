@@ -51,8 +51,8 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 			
 			stringstream sst(infoBiteStr);
 			sst >> rank >> year;
-			infoArray[0][numInfo] = rank;
-			infoArray[1][numInfo] = year;
+			infoArray[numInfo][0] = rank;
+			infoArray[numInfo][1] = year;
 
 			numInfo++;
 		}
@@ -64,8 +64,8 @@ bool loadInfo( const string& filename, int infoArray[][INFO], int numLanguages )
 
 
 string formatReportLine( int languageRank, int infoArray[][INFO], string names[] ){
-	string year{ to_string(infoArray[1][languageRank]) };
-	string rank{ to_string(infoArray[0][languageRank]) };
+	string year{ to_string(infoArray[languageRank][1]) };
+	string rank{ to_string(infoArray[languageRank][0]) };
 	string name = names[languageRank];
 
 	name.resize(16);
