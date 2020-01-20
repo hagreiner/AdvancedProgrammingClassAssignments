@@ -30,16 +30,17 @@ int main()
 			float ounces;
 			getline( input, name );
 			input >> type >> pages >> ounces;
-			type = Type(type);
+
+			Type typeChanged = static_cast<Type>(type);
+			
 			input.ignore(INT_MAX, '\n');  //ignore the newline char at the end of the line
          
 			//create Book object here!
-			cout << type << endl;
-			//Book myBook(name, type, pages, ounces);
+			//cout << type << endl;
+			Book myBook(name, typeChanged, pages, ounces);
          
 			//write out report line for movie here!
-			
-			
+			cout << myBook.formatReportLine() << endl;
          
 		}
 	}
