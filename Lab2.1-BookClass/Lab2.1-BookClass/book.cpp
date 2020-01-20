@@ -1,6 +1,10 @@
 #include "book.h"
 
 Book::Book(){
+	bName = "";
+	bType = UNKNOWN;
+	bPages = 0;
+	bOunces = 0.0;
 }
 
 Book::Book(const string& name, Type type, int pages, float ounces){
