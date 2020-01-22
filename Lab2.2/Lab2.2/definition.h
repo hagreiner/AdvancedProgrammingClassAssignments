@@ -34,12 +34,13 @@ public:
 	void setLike(bool like) { liked = like; }
 	void setTrackNum(int trackLocation) { trackNumber = trackLocation; }
 	void setRating(int newRating) { rating = newRating; }
+	// make setters for all variables
 
 	std::string getTitle() { return title; }
 	std::string getArtist() { return artist; }
 	std::string getAlbum() { return album; }
 
-	std::string songInformation();
+	std::string songInformation(); // needs to push all info to the vector
 
 	~Song();
 };

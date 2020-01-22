@@ -126,7 +126,6 @@
     <ClInclude Include="definition.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="definition.cpp" />
     <ClCompile Include="implementation.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

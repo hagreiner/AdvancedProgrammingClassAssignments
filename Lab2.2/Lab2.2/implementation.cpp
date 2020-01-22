@@ -25,11 +25,11 @@ Song::Song(std::string t, std::string a, std::string al, float len, int b,
 	year = yr;
 }
 
-float Song::toMinutes(float seconds) {
+float Song::toMinutes(float seconds) { // need to finish
 	return 1.1;
 }
 
-std::string Song::songInformation() {
+std::string Song::songInformation() { // pack into vector of str statements
 	return "";
 }
 
