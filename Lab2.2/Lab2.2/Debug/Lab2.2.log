@@ -1,6 +1,2 @@
-﻿  definition.cpp
-  implementation.cpp
-  main.cpp
-  Generating Code...
-C:\Users\hannah.greiner\source\repos\Lab2.2\Lab2.2\implementation.cpp(30,12): warning C4305:  'return': truncation from 'double' to 'float'
-  Lab2.2.vcxproj -> C:\Users\hannah.greiner\source\repos\Lab2.2\Debug\Lab2.2.exe
+﻿  main.cpp
+  Lab2.2.vcxproj -> C:\Users\hannah.greiner\Documents\GitHub\AdvancedProgrammingClassAssignments\Lab2.2\Debug\Lab2.2.exe
