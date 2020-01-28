@@ -1,9 +1,9 @@
-/*
-@file
-@brief
-@author
-@assignment
-@date
+/**
+* @file : main.cpp
+* @brief : create song objects and call functions to populate parameters and variables
+* @author : Benjamin Roberts and Hannah Greiner
+* @assignment : Lab 2.2 - I Wanna Rock
+* @date : January 27, 2020
 */
 
 #include"definition.h"
