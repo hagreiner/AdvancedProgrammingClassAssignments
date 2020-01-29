@@ -43,6 +43,12 @@ Song::~Song(){
 }
 
 
+void outputVector(std::vector<std::string> songData) {
+	for (int i = 0; i < 9; i++) {
+		std::cout << songData[i] << std::endl;
+	}
+}
+
 std::string boolToString(bool oldBool) {
 	if (oldBool == false) {
 		return "</3";

@@ -8,6 +8,7 @@
 #include <string>
 #include<iostream>
 #include <vector> 
+#include <fstream>
 
 
 #ifndef DEFINITION_H
@@ -103,6 +104,8 @@ public:
 
 	~Song();
 };
+
+void outputVector(std::vector<std::string> songData);
 
 std::string boolToString(bool oldBool);
 
