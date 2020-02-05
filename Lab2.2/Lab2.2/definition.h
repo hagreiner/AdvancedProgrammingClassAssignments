@@ -102,11 +102,17 @@ public:
 	*/
 	std::vector<std::string> songInformation();
 
+	static int objectCount;
+
 	~Song();
 };
+
+Song* getPlayList(std::string fileName, int size);
 
 void outputVector(std::vector<std::string> songData);
 
 std::string boolToString(bool oldBool);
+
+int getLineCount(std::string fileName);
 
 #endif
