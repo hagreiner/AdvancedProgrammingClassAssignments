@@ -9,6 +9,8 @@
 #include<iostream>
 #include <vector> 
 #include <fstream>
+#include <sstream>
+#include <iomanip>  
 
 
 #ifndef DEFINITION_H
@@ -72,15 +74,16 @@ public:
 	* @assignment : Lab 2.2 - I Wanna Rock
 	* @date : January 27, 2020
 	*/
-	void setLike(bool like) { liked = like; }
-	void setTrackNum(int trackLocation) { trackNumber = trackLocation; }
-	void setRating(int newRating) { rating = newRating; }
-	void setTitle(std::string t) { title = t; }
-	void setArtist(std::string a) { artist = a; }
-	void setAlbum(std::string a) { album = a; }
-	void setLength(int sec) { lengthStr = toMinutes(sec); }
-	void setBPM(int b) { bpm = b; }
-	void setYear(int yr) { year = yr; }
+	void setLike(bool liked) { this->liked = liked; }
+	void setTrackNum(int trackNumber) { this->trackNumber = trackNumber; }
+	void setRating(int rating) {this-> rating = rating; }
+	void setTitle(std::string title) { this->title = title; }
+	void setArtist(std::string artist) { this->artist = artist; }
+	void setAlbum(std::string album) { this->album = album; }
+	void setLength(int sec) { this->lengthStr = toMinutes(sec); }
+	void setBPM(int bpm) { this->bpm = bpm; }
+	void setYear(int year) { this->year = year; }
+	void setBitRate(int bitrate) { this->bitRate = bitRate; }
 
 	/**
 	* @file : definition.h
@@ -91,7 +94,13 @@ public:
 	*/
 	std::string getTitle() { return title; }
 	std::string getArtist() { return artist; }
-	std::string getAlbum() { return album; }
+	std::string getLength() { return lengthStr; }
+	std::string getBPM() { return std::to_string(bpm); }
+	std::string getLiked() { return std::to_string(liked); }
+	std::string getRating() { return std::to_string(rating) + " stars"; }
+	std::string getBitRate() { return std::to_string(bitRate); }
+	std::string getTrackNum() { return std::to_string(trackNumber); }
+	std::string getYear() { return std::to_string(year); }
 
 	/**
 	* @file : definition.h
@@ -102,17 +111,13 @@ public:
 	*/
 	std::vector<std::string> songInformation();
 
-	static int objectCount;
-
 	~Song();
 };
 
-Song* getPlayList(std::string fileName, int size);
+Song* getPlayList(std::string fileName, int size); //new
 
-void outputVector(std::vector<std::string> songData);
+int getLineCount(std::string fileName); //new
 
-std::string boolToString(bool oldBool);
-
-int getLineCount(std::string fileName);
+void printItem(std::string line, int lineSize); //new
 
 #endif

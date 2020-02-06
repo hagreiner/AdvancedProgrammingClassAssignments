@@ -1,8 +1,6 @@
 #include "definition.h"
 
 Song::Song() {
-	objectCount++;
-
 	title = "";
 	artist = "";
 	album = "";
@@ -17,8 +15,6 @@ Song::Song() {
 
 Song::Song(std::string t, std::string a, std::string al, int len, int b,
 	int br, int tn, int yr) {
-	objectCount++;
-
 	title = t;
 	artist = a;
 	album = al;
@@ -38,14 +34,12 @@ std::string Song::toMinutes(int seconds) {
 
 std::vector<std::string> Song::songInformation() {
 	std::vector<std::string> resultVector{"Title: " + title, "Artist: " + artist, "Album: " + album, 
-		"Length:" + lengthStr, "BMP: " + std::to_string(bpm), "Liked: " + boolToString(liked), "Rating: " + std::to_string(rating) + " stars",
+		"Length:" + lengthStr, "BMP: " + std::to_string(bpm), "Liked: " + std::to_string(liked), "Rating: " + std::to_string(rating) + " stars",
 		"Bitrate:" + std::to_string(bitRate), "Track Number: " + std::to_string(trackNumber), "Year: " + std::to_string(year)};
 	return resultVector;
 }
 
-Song::~Song(){
-	objectCount--;
-}
+Song::~Song(){}
 
 Song* getPlayList(std::string fileName, int size){
 	std::string header;
@@ -59,6 +53,9 @@ Song* getPlayList(std::string fileName, int size){
 	std::string bitrate;
 	std::string trackNum;
 	std::string year;
+	bool like;
+
+	Song* songArray = new Song[size];
 
 	std::ifstream input(fileName);
 	if (input.good()) {
@@ -66,7 +63,7 @@ Song* getPlayList(std::string fileName, int size){
 		getline(input, header);
 		std::cout << header << std::endl;
 
-		for (int index = 0; index < size; index++) {
+		for (int i = 0; i < size; i++) {
 			getline(input, title, ',');
 			getline(input, album, ',');
 			getline(input, artist, ',');
@@ -77,25 +74,23 @@ Song* getPlayList(std::string fileName, int size){
 			getline(input, bitrate, ',');
 			getline(input, trackNum, ',');
 			getline(input, year);
+
+			std::istringstream(liked) >> std::boolalpha >> like;
+
+			songArray[i].setAlbum(album);
+			songArray[i].setArtist(artist);
+			songArray[i].setBPM(stoi(bpm));
+			songArray[i].setLength(stoi(length));
+			songArray[i].setLike(like);
+			songArray[i].setRating(stoi(rating));
+			songArray[i].setTitle(title);
+			songArray[i].setTrackNum(stoi(bitrate));
+			songArray[i].setTrackNum(stoi(trackNum));
+			songArray[i].setYear(stoi(year));
 		}
 		input.close();
-
-	return nullptr;
-}
-
-void outputVector(std::vector<std::string> songData) {
-	for (int i = 0; i < 9; i++) {
-		std::cout << songData[i] << std::endl;
 	}
-}
-
-std::string boolToString(bool oldBool) {
-	if (oldBool == false) {
-		return "</3";
-	}
-	else {
-		return "<3";
-	}
+	return songArray;
 }
 
 int getLineCount(std::string fileName) {
@@ -112,4 +107,8 @@ int getLineCount(std::string fileName) {
 
 	input.close();
 	return lineCount - 1;
+}
+
+void printItem(std::string line, int lineSize){
+	std::cout << std::setw(lineSize) << line;
 }

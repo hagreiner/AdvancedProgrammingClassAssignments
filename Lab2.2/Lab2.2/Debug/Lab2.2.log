@@ -1,0 +1,5 @@
+﻿  implementation.cpp
+  main.cpp
+  Generating Code...
+implementation.obj : error LNK2001: unresolved external symbol "public: static int Song::objectCount" (?objectCount@Song@@2HA)
+D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\Lab2.2\Debug\Lab3.2.exe : fatal error LNK1120: 1 unresolved externals
