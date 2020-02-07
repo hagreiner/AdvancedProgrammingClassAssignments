@@ -1,6 +1,0 @@
-Title, Album, Artist, Length, BPM, Liked, Rating, Bitrate, trackNum, Year
-One Foot,What if Nothing,WALK THE MOON,261,120,true,4,256,3,2017
-Augment,Getaway-EP,Zircon,249,124,false,3,256,1,2014
-Rise,Conquer,OVERWERK,395,130,true,5,256,1,2013,
-A Single Day,ANimals,Approaching Nirvana,271,100,false,2,320,23,2014
-Palladio,Escala,Escala,234,115,true,5,256,2,2009
