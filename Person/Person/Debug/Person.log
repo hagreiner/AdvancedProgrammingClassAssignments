@@ -1,6 +1,2 @@
-﻿  main.cpp
-  person.cpp
-D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\Person\Person\person.cpp(5,20): error C2662: 'void Person::printPersonInfo(void)': cannot convert 'this' pointer from 'const Person' to 'Person &'
-D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\Person\Person\person.cpp(5,2): message : Conversion loses qualifiers
-D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\Person\Person\person.h(13,7): message : see declaration of 'Person::printPersonInfo'
-  Generating Code...
+﻿  person.cpp
+  Person.vcxproj -> D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\Person\Debug\Person.exe

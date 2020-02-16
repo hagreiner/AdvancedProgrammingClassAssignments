@@ -10,16 +10,16 @@ public:
 	Person(const Person& rhs);
 
 	~Person();
-	void printPersonInfo();
+	void printPersonInfo() const;
 
-	void setName(std::string name) { this->name = name; } //FIX: added this-> in front of name variable
-	std::string getName() const { return name; }  //FIX: added const after function name
+	void setName(std::string name) { *(this->name) = name; } //FIX: added this-> in front of name variable
+	std::string getName() const { return *name; }  //FIX: added const after function name
 
 	void setBirthYear(int birthYear) { *(this->birthYear) = birthYear; } // DO NOT CHANGE THE VARIABLE NAME
 	int getBirthYear() const { return *birthYear; }  //FIX: added const after function name
 
 private:
-	std::string name;      // DO NOT CHANGE VARIABLE NAME
+	std::string* name;      // DO NOT CHANGE VARIABLE NAME
 	int* birthYear; // DO NOT CHANGE VARIABLE NAME
 };
 
