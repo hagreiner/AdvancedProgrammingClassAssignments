@@ -1,0 +1,4 @@
+﻿  coordinate.cpp
+C:\Users\hannah.greiner\Documents\GitHub\AdvancedProgrammingClassAssignments\OperatorOverloading\OperatorOverloading\coordinate.cpp(96,9): warning C4101:  'y': unreferenced local variable
+C:\Users\hannah.greiner\Documents\GitHub\AdvancedProgrammingClassAssignments\OperatorOverloading\OperatorOverloading\coordinate.cpp(96,6): warning C4101:  'x': unreferenced local variable
+  OperatorOverloading.vcxproj -> C:\Users\hannah.greiner\Documents\GitHub\AdvancedProgrammingClassAssignments\OperatorOverloading\Debug\OperatorOverloading.exe
