@@ -1,2 +1,8 @@
-﻿  daily.cpp
-  HGreiner_Final.vcxproj -> D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\HGreiner_Final\Debug\HGreiner_Final.exe
+﻿  dailyReminder.cpp
+D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\HGreiner_Final\HGreiner_Final\activityLogger.h(15,14): error C2065: 'DailyReminder': undeclared identifier
+D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\HGreiner_Final\HGreiner_Final\activityLogger.h(15,28): error C2059: syntax error: '>'
+D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\HGreiner_Final\HGreiner_Final\activityLogger.h(20,27): error C2061: syntax error: identifier 'DailyReminder'
+  activityLogger.cpp
+  main.cpp
+D:\AdvancedProgramming\AdvancedProgrammingClassAssignments\HGreiner_Final\HGreiner_Final\main.cpp(11,18): warning C4101: 'pause': unreferenced local variable
+  Generating Code...
