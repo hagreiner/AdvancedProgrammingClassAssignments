@@ -18,12 +18,12 @@ int mainMenu() {
 }
 
 void eventBasics(CalenderEvent* event) {
-	std::string eventName;
+	std::string eventName, junk;
 	int exitBool = 0;
 	float min = 0.1, max = 25.0, time = 0.0;
 	
 	std::cout << "What is the name of your event?\n";
-	getline(std::cin, eventName);
+	getline(std::cin, junk);
 	getline(std::cin, eventName);
 	event->setName(eventName);
 
@@ -87,6 +87,46 @@ void weeklyInformation(WeeklyEvent* event) {
 
 	strDay = numToDay(day);
 	event->setDay(strDay);
+}
+
+void reminderMenu(DailyReminder* event) {
+	int exitBool = 0, min = 0, max = 8, day = 0;
+	int* locationTime;
+	std::string junk, eventName, strDay;
+
+	std::cin.clear();
+	clear();
+	
+	std::cout << "What is the name of your reminder?\n";
+	getline(std::cin, junk);
+	getline(std::cin, eventName);
+	event->setName(eventName);
+
+	while (true){
+		std::cin.clear();
+		clear();
+
+		while (exitBool == 0) {
+			std::cout << "What day does this event happen on?\n";
+			std::cout << "\t1: Sun\n";
+			std::cout << "\t2: Mon\n";
+			std::cout << "\t3: Tue\n";
+			std::cout << "\t4: Wed\n";
+			std::cout << "\t5: Thu\n";
+			std::cout << "\t6: Fri\n";
+			std::cout << "\t7: Sat\n";
+			std::cout << "\t8: No More Days\n";
+
+			day = verifyData(min, max);
+			if (day > 0) { exitBool = 1; }
+
+			clear();
+		}
+		exitBool = 0;
+		if (day == 8) { break; }
+		strDay = numToDay(day);
+		event->addDays(strDay);
+	}
 }
 
 void mainMenuText() {

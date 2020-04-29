@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="events.txt" />
+    <Text Include="goals.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

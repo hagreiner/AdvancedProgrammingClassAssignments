@@ -76,5 +76,8 @@
     <Text Include="events.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="goals.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

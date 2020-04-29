@@ -40,7 +40,7 @@ int* verifyTime() {
 				int digit_3 = int(inputTime[3]) - 48;
 				int digit_4 = int(inputTime[4]) - 48;
 				std::cout << digit_0;
-				if ((((digit_0 < 3) && (digit_1 < 4)) || (digit_0  == 0)) && (digit_3 < 6)) {
+				if (((digit_0 * 10) + digit_1) < 24 && (digit_3 < 6)) {
 					returnVal[0] = (digit_0 * 10) + digit_1;
 					returnVal[1] = (digit_3 * 10) + digit_4;
 				}

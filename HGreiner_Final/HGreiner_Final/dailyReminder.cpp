@@ -1,5 +1,5 @@
 #include "dailyReminder.h"
 
-void DailyReminder::addDays(int day) {
+void DailyReminder::addDays(std::string day) {
 	days.push_back(day);
 }

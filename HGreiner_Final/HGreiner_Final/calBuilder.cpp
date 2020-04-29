@@ -57,7 +57,7 @@ std::vector<std::vector<std::string>> dayEvents(std::string day) {
 	std::vector<std::string> eventNames, eventTimes;
 	std::vector<std::vector<std::string>> retVect;
 
-	inputFile.open(fileName, std::ios_base::app);
+	inputFile.open(fileName);
 	if (inputFile.good()) {
 		while (true) {
 			getline(inputFile, inStr);
